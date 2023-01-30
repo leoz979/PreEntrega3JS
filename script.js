@@ -134,7 +134,10 @@ function carroCompraRecuperar(){
 
 
 function finalizarCompra(){
-    alert("gracias por su compra")
+   alert("Gracias por tu compra, el total a pagar es: " + totalCompra)
+    localStorage.removeItem("carroCompra")
+    carroCompra = []
+    renderizarCarroCompra(carroCompra)
 }
 
 
