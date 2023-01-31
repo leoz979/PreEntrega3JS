@@ -134,11 +134,21 @@ function carroCompraRecuperar(){
 
 
 function finalizarCompra(){
-   alert("Gracias por tu compra, el total a pagar es: " + totalCompra)
-    localStorage.removeItem("carroCompra")
-    carroCompra = []
-    renderizarCarroCompra(carroCompra)
-}
-
-
-
+     mostrarSweetAlert("Compra Finalizada","Gracias por tu compra, el total a pagar es: $" + totalCompra, 'success', 5000, false)
+     localStorage.removeItem("carroCompra")
+     carroCompra = []
+     renderizarCarroCompra(carroCompra)
+ }
+ 
+ function mostrarSweetAlert(titulo, texto, icono, tiempo, mostrarBoton, urlImagen, anchoImagen, altoImagen) {
+     Swal.fire({
+       title: titulo,
+       text: texto,
+       icon: icono,
+       timer: tiempo,
+       showConfirmButton: mostrarBoton,
+       imageUrl: urlImagen,
+       imageWidth: anchoImagen,
+       imageHeight: altoImagen
+     })
+ }
